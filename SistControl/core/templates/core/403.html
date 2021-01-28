@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+        <div class="container-fluid">
+
+          <!-- 403 Error Text -->
+          <div class="text-center">
+            <div class="error mx-auto" data-text="403">403</div>
+            <p class="lead text-gray-800 mb-5">Acceso denegado</p>
+            <p class="text-gray-500 mb-0">Parece que has encontrado un error en la matrix...</p>
+            <p class="text-gray-500 mb-0">O quizás no tienes los permisos para estar aquí</p>
+            <p class="text-gray-500 mb-0">Usuario: <mark>{{user.username}} ({{user.get_full_name}})</mark> no tiene acceso para visualizar este contenido</p>
+            <a href="{% url 'core:home' %}">&larr; Regresar al inicio</a>
+            <a href="{% url 'core:login' %}">&larr; Cambiar de usuario</a>
+          </div>
+      <!-- End of Main Content -->
+{% endblock content %}
+
+    
